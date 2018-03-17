@@ -13,8 +13,9 @@ public:
 	virtual ~Sprite();
 
 	virtual void draw()= 0;
-	virtual void update() = 0;
+	
 protected:
+	SDL_Texture* texture;
 
 	Sprite(GameEngine* ge, int x, int y, int w, int h, const char* path);
 

@@ -5,9 +5,8 @@
 
 
 
-PlayerSprite::PlayerSprite(GameEngine* ge, int x, int y, int w, int h, const char* path) : Sprite(ge, x,y,w,h,path)
+PlayerSprite::PlayerSprite(GameEngine* ge, int x, int y, int w, int h, const char* path) : InteractiveSprite(ge, x,y,w,h,path)
 {
-	texture = IMG_LoadTexture(gameengine->getRen(), path);
 	/*SDL_Surface* tmpSurface = IMG_Load(path);
 	texture = SDL_CreateTextureFromSurface(gameengine->getRen(), tmpSurface);
 	SDL_FreeSurface(tmpSurface);*/
@@ -23,7 +22,7 @@ PlayerSprite* PlayerSprite::getInstance(GameEngine* ge, int x, int y, int w, int
 
 PlayerSprite::~PlayerSprite()
 {
-	SDL_DestroyTexture(texture);
+	//SDL_DestroyTexture(texture);
 }
 
 
@@ -39,4 +38,9 @@ void PlayerSprite::update()
 	rect.x = gameengine->getMouseX() - m_Xoffset;
 	rect.y = gameengine->getMouseY() - m_Yoffset;
 	
+}
+
+void PlayerSprite::checkCollision()
+{
+
 }

@@ -3,7 +3,8 @@
 #include "Sprite.h"
 #include "SDL_image.h"
 #include <iostream>
-
+#include "InteractiveSprite.h"
+#include "BackgroundSprite.h"
 
 GameEngine::GameEngine(const char* title, int xpos, int ypos, int width, int height)
 {
@@ -88,11 +89,16 @@ void GameEngine::run()
 
 		SDL_RenderClear(ren);
 		
-		for (Sprite* s : sprites)
+		for (BackgroundSprite* bs : b_sprites)
 		{
-			s->update();
-			s->draw();
+			bs->draw();
+		}
 
+		for (InteractiveSprite* is : i_sprites)
+		{
+			is->update();
+			is->draw();
+			is->checkCollision();
 		}
 
 		
@@ -108,9 +114,14 @@ void GameEngine::run()
 
 }
 
-void GameEngine::add(Sprite* sprite)
+void GameEngine::addInteractiveSprite(InteractiveSprite* i_sprite)
 {
-	sprites.push_back(sprite);
+	i_sprites.push_back(i_sprite);
+}
+
+void GameEngine::addBackgroundSprite(BackgroundSprite* b_sprite)
+{
+	b_sprites.push_back(b_sprite);
 }
 
 SDL_Renderer* GameEngine::getRen() const

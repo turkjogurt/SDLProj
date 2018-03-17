@@ -1,5 +1,7 @@
 #pragma once
 #include "Sprite.h"
+#include "GameEngine.h"
+
 class BackgroundSprite :
 	public Sprite
 {
@@ -16,7 +18,7 @@ protected:
 	BackgroundSprite(GameEngine* ge, int x, int y, int w, int h, const char* path);
 
 private:
-	SDL_Texture* texture;
+	//SDL_Texture* texture;
 
 };
 

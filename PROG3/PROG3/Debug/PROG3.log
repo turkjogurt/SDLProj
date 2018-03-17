@@ -1,2 +1,11 @@
-﻿  main.cpp
+﻿  Sprite.cpp
+  PlayerSprite.cpp
+  GameEngine.cpp
+  Egg.cpp
+  Generating Code...
+  Compiling...
+  main.cpp
+  InteractiveSprite.cpp
+  BackgroundSprite.cpp
+  Generating Code...
   PROG3.vcxproj -> D:\GITProjects\SDLProj\PROG3\Debug\PROG3.exe

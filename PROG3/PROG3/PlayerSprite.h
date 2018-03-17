@@ -1,7 +1,7 @@
 #pragma once
-#include "Sprite.h"
+#include "InteractiveSprite.h"
 class PlayerSprite :
-	public Sprite
+	public InteractiveSprite
 {
 public:
 	
@@ -9,14 +9,15 @@ public:
 
 	void draw();
 	void update();
+	void checkCollision();
+	PlayerSprite(GameEngine* ge, int x, int y, int w, int h, const char* path);
 
 	~PlayerSprite();
 
 protected:
-	PlayerSprite(GameEngine* ge, int x, int y, int w, int h, const char* path);
 
 private:
-	SDL_Texture* texture;
+	//SDL_Texture* texture;
 	int m_Xoffset;
 	int m_Yoffset;
 	

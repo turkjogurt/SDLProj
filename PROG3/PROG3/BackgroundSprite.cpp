@@ -5,7 +5,8 @@
 
 BackgroundSprite::BackgroundSprite(GameEngine* ge, int x, int y, int w, int h, const char* path) : Sprite(ge, x, y, w, h, path)
 {
-	texture = IMG_LoadTexture(gameengine->getRen(), path);
+	//texture = IMG_LoadTexture(gameengine->getRen(), path);
+	ge->addBackgroundSprite(this);
 }
 
 BackgroundSprite* BackgroundSprite::getInstance(GameEngine* ge, int x, int y, int w, int h, const char* path)
@@ -16,7 +17,7 @@ BackgroundSprite* BackgroundSprite::getInstance(GameEngine* ge, int x, int y, in
 
 BackgroundSprite::~BackgroundSprite()
 {
-	SDL_DestroyTexture(texture);
+	//SDL_DestroyTexture(texture);
 }
 
 void BackgroundSprite::draw()

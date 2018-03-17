@@ -135,14 +135,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BackgroundSprite.cpp" />
+    <ClCompile Include="Egg.cpp" />
     <ClCompile Include="GameEngine.cpp" />
+    <ClCompile Include="InteractiveSprite.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PlayerSprite.cpp" />
     <ClCompile Include="Sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BackgroundSprite.h" />
+    <ClInclude Include="Egg.h" />
     <ClInclude Include="GameEngine.h" />
+    <ClInclude Include="InteractiveSprite.h" />
     <ClInclude Include="PlayerSprite.h" />
     <ClInclude Include="Sprite.h" />
   </ItemGroup>

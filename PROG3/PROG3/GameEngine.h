@@ -3,7 +3,9 @@
 #include <vector>
 #include "Sprite.h"
 
-class Sprite;
+
+class InteractiveSprite;
+class BackgroundSprite;
 
 class GameEngine
 {
@@ -12,7 +14,8 @@ public:
 	~GameEngine();
 	void run();
 	void addPlayer(const char* path);
-	void add(Sprite* sprite);
+	void addInteractiveSprite(InteractiveSprite* i_sprite);
+	void addBackgroundSprite(BackgroundSprite* b_sprite);
 
 	SDL_Renderer* getRen() const;
 
@@ -24,7 +27,8 @@ public:
 private: 
 	SDL_Renderer *ren;
 	SDL_Window *window;
-	std::vector<Sprite*> sprites;
+	std::vector<InteractiveSprite*> i_sprites;
+	std::vector<BackgroundSprite*> b_sprites;
 
 	SDL_Texture *texi;
 
